@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html ng-app="Splice">
+
+<head>
+<meta charset="utf-8">
+
+<link rel="icon" href="https://d1qb2nb5cznatu.cloudfront.net/startups/i/277983-297bb8180601a8e74de2a737c2de0767-medium_jpg.jpg?buster=1381328980">
+<link rel="stylesheet" href="Splice.css" >
+
+<title>SM-808</title>
+</head>
+
+<body ng-controller="MC">
+
+
+<h1> SM-808 DRUM MACHINE</h1><p>
+
+<hr>
+<div class="realtime" ng-if="playing">
+	<p>
+	<h3> {{currentKick}} </h3> <p>
+	<h3> {{currentSnare}} </h3> <p>	
+	<h3> {{currentHihat}}  </h3> <p>
+	<h1> Beat {{noteTracker}} </h1> <p>
+	 There should be {{timing}} ms between each 16th note
+</div>
+<div>
+        <h4> {{songName}} &nbsp &nbsp | &nbsp &nbsp {{bpm}}</h4>
+</div>
+<div>
+ <form name="myForm" ng-submit="validateSong(myForm.$valid)">
+
+
+        <input required type="text" name="songName" maxlength="22" ng-maxlength="22" ng-model="songName">Name 
+        <div class="namevalidity">
+        <small ng-show="myForm.songName.$error.required" >Please enter a name...</small> 
+    </div>
+
+        <input required type="text" name="bpm"  maxlength="3" ng-pattern="/^[0-9]*$/" ng-minlength="1" ng-maxlength="3" style="width: 40px;" ng-model="bpm">BPM
+        <div class="bpmvalidity">
+        <small ng-show="myForm.bpm.$invalid && !myForm.bpm.$pristine" >Invalid BPM...</small> 
+        <small ng-show="myForm.bpm.$error.pattern" class="help-block">Only digits are allowed...</small>
+        <small ng-show="myForm.bpm.$error.required" class="help-block">A valid BPM is required</small>
+    </div>
+
+        <p>
+
+        <input required type="text" ng-pattern="/^[0-1]*$/" name="kick"  maxlength="16" ng-minlength="16" ng-maxlength="16" ng-model="kick">Kick
+        <div class="kickvalidity">
+        <small ng-show="myForm.kick.$invalid && !myForm.kick.$pristine" >Invalid kick sequence...</small> 
+        <small ng-show="myForm.kick.$error.pattern" class="help-block">Only 0's and 1's are allowed...</small>
+        <small ng-show="myForm.kick.$error.minlength" class="help-block">you need 16 characters</small>
+        <small ng-show="myForm.kick.$error.required" class="help-block">A valid kick sequence is required</small>
+    </div>
+        <p>
+
+        <input required type="text" ng-pattern="/^[0-1]*$/" name="snare" maxlength="16" ng-minlength="16" ng-maxlength="16" ng-model="snare">Snare
+        <div class="snarevalidity">
+        <small ng-show="myForm.snare.$invalid && !myForm.snare.$pristine" >Invalid snare sequence...</small> 
+        <small ng-show="myForm.snare.$error.pattern" class="help-block">Only 0's and 1's are allowed...</small>
+        <small ng-show="myForm.snare.$error.minlength" class="help-block">you need 16 characters</small>
+        <small ng-show="myForm.snare.$error.required" class="help-block">A valid snare sequence is required</small>
+    </div>
+        <p>
+
+        <input required type="text" ng-pattern="/^[0-1]*$/" name="hihat" maxlength="16" ng-minlength="16" ng-maxlength="16" ng-model="hihat">HiHat
+        <div class="hihatvalidity">
+        <small ng-show="myForm.hihat.$invalid && !myForm.hihat.$pristine" >Invalid hihat sequence...</small> 
+        <small ng-show="myForm.hihat.$error.pattern" class="help-block">Only 0's and 1's are allowed...</small>
+        <small ng-show="myForm.hihat.$error.minlength" class="help-block">you need 16 characters</small>
+        <small ng-show="myForm.hihat.$error.required" class="help-block">A valid hihat sequence is required</small>
+    </div>
+        <p>
+
+        <input type="submit"  ng-disabled="myForm.$invalid" value="SUBMIT" name="submit">
+</form>
+</div>
+
+<p>
+
+
+
+
+
+<p>
+
+
+
+
+
+
+
+<div class="evalstate">
+<h3>	{{locked}}  </h3>
+</div>
+
+<p>
+
+<div class="play">
+<button class="play-btn" ng-click="play()">PLAY
+</div>
+
+<div class="reset">
+<button class="play-btn" ng-click="reset()">RESET
+</div>
+	
+<div class="pause">
+<button class="pause-btn" ng-click="pause(); stop()">STOP
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="Splice.js"></script>
+
+</body>
+
+</html>

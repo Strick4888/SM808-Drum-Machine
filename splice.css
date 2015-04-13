@@ -1,0 +1,179 @@
+
+
+
+html {
+  
+  display: table;
+    margin: auto;
+    color: #ffffff;
+    background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+}
+
+div.backbox {
+    border: solid 1px #CCCCCC;
+    margin: 0 auto;
+    display: table;
+    padding: 4px;
+    display: inline-block;
+    text-align: center;
+    width: 400px;
+    height:275px;
+    overflow: hidden;
+    background: #f7f7f7 url(http://css-tricks.com/examples/RoundButtons/images/bg.png) repeat center top;
+}
+
+button {
+        height: 50px;
+    width: 75px;    
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff
+
+
+}
+
+form.myForm, div.patterns {
+	
+	float: left;
+    width: 55%;
+    text-align: left;
+    margin: 0 auto;
+
+    
+
+}
+
+div.realtime {
+	
+    position:absolute;
+    left: 700px;
+    top: 203px;
+    border: #f7f7f7 url(http://css-tricks.com/examples/RoundButtons/images/bg.png) repeat center top;
+    border-width: 5px;
+}
+
+div.namevalidity {
+    position:absolute;
+    left: 10px;
+    top: 100px;
+}
+
+div.bpmvalidity {
+    position:absolute;
+    left: 10px;
+    top: 120px;
+}
+div.kickvalidity {
+    position:absolute;
+    left: 10px;
+    top: 140px;
+}
+div.snarevalidity {
+    position:absolute;
+    left: 10px;
+    top: 160px;
+}
+div.hihatvalidity {
+    position:absolute;
+    left: 10px;
+    top: 180px;
+}
+
+
+
+div.backbox2 {
+border: solid 1px #CCCCCC;
+    margin: 0 auto;
+    
+    padding: 4px;
+    
+    text-align: left;
+    
+    background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+	
+   
+    width: 67%;
+    position: relative;
+    
+    	
+}
+
+div.eval {
+	position: absolute;
+	
+	left: 450px;
+	top: 325px;
+}
+
+div.play {
+	position: absolute;
+	left: 450px;
+	top : 400px;
+    width: 600px;
+
+}
+
+div.reset {
+    position: absolute;
+    left: 550px;
+    top : 400px;
+}
+div.pause {
+	position: absolute;
+	left: 450px;
+	top : 480px;
+}
+
+div.pausePlayback {
+    position: absolute;
+    left: 550px;
+    top : 480px;
+}
+
+input[type=submit] {
+     
+    background-color: #000000;
+    color: #ffffff;
+
+     height: 50px;
+    width: 75px;   
+
+    position: absolute;
+    
+    left: 450px;
+    top: 325px;
+}
+
+div.evalstate {
+	position: absolute;
+	left: 550px;
+	top : 320px;
+}
+}
+
+.animate-enter, .animate-leave {
+transition: 500ms ease-in all;
+position: relative;
+display: block;
+} 
+.animate-enter.animate-enter-active, .animate-leave {
+  left: 0;
+}
+.animate-leave.animate-leave-active, .animate-enter {
+  left: 500px;
+}
